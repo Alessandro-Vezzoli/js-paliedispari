@@ -15,23 +15,33 @@
     />
   </head>
   <body>
-    <div class="container">
-      <h1 class="text-center mt-5">USER VS COMPUTER</h1>
-      <div class="card mt-5">
-        <div id="buttonEvenOdd">
-          <h3 class="text-center">SCELI PARI O DISPARI</h3>
-          <div class="col-12 d-flex justify-content-center mt-3">
-            <button onclick="evenOdd('even')" class="btn btn-primary me-2">
-              PARI
-            </button>
-            <button onclick="evenOdd('odd')" class="btn btn-primary">
-              DISPARI
-            </button>
+    <div class="container" id="palindromeGame">
+      <h1 class="text-center m-5">PAROLE PALINDROME</h1>
+      <div class="card p-5 m-5">
+        <div class="row">
+          <div class="col-12 d-flex justify-content-center">
+            <div class="text-center mt-3">
+              <label for="validatePalindrome" class="form-label"
+                >Inserire una parola</label
+              >
+              <input type="text" class="form-control" id="palindromeWord" />
+            </div>
+            <div class="mt-5 ms-3">
+              <button onclick="validatePalindrome()" class="btn btn-primary">
+                INVIA
+              </button>
+            </div>
           </div>
         </div>
-        <div class="row mt-5">
+        <h1 class="text-center text-uppercase mt-5" id="resultPalindrome"></h1>
+      </div>
+    </div>
+    <div class="container d-none" id="userComputer">
+      <h1 class="text-center m-5">USER VS COMPUTER</h1>
+      <div class="card p-5 m-5" id="numberChoice">
+        <div class="row">
           <div class="col-12 d-flex justify-content-center">
-            <div class="text-center mt-3" id="number">
+            <div class="text-center mt-3">
               <label for="formNumber" class="form-label"
                 >Scegli un numero da 1 a 5</label
               >
@@ -42,10 +52,22 @@
                 INVIA
               </button>
             </div>
-            <h3 class="text-center" id="error"></h3>
           </div>
         </div>
+        <h3 class="text-center" id="error"></h3>
       </div>
+      <div class="card p-5 m-5 d-none" id="buttonEvenOdd">
+        <h3 class="text-center">SCELI PARI O DISPARI</h3>
+        <div class="col-12 d-flex justify-content-center mt-3">
+          <button onclick="evenOdd('even')" class="btn btn-primary me-2">
+            PARI
+          </button>
+          <button onclick="evenOdd('odd')" class="btn btn-primary">
+            DISPARI
+          </button>
+        </div>
+      </div>
+      <h1 class="text-center text-uppercase" id="resultGame"></h1>
     </div>
     <script src="./assets/main.js" async defer></script>
   </body>

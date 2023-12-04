@@ -10,64 +10,72 @@ Pari e Dispari
 --Sommiamo i due numeri Stabiliamo se la somma dei due numeri è pari o dispari (usando una funzione)
 --Dichiariamo chi ha vinto.*/
 
-
 // Palidroma
 
 // chiedere all'utente una parola
 
-
-/*let word = prompt("Inserire una parola");
-
-// se non inserisce un parola scrivere inserire una parola
-if (word === null || word === "") {
-  console.log("non hai inserito una parola");
-  word = prompt("non hai inserito una parola, Inserire una parola");
-} else if (!/[a-zA-Z]/.test(word)) {
-  word = prompt("non hai inserito una parola, Inserire una parola");
-  validate();
-}
-console.log(word);
-
 // capire se la parola inserita è palindroma
 function validatePalindrome() {
-  const lenWord = word.length;
+  let word = document.getElementById("palindromeWord").value;
+  console.log(word);
 
+  // se non inserisce un parola scrivere inserire una parola
+  if (word === null || word === "") {
+    console.log("non hai inserito una parola");
+    word = alert("non hai inserito una parola, Inserire una parola");
+  } else if (!/[a-zA-Z]/.test(word)) {
+    word = alert("non hai inserito una parola, Inserire una parola");
+    validate();
+  }
+  const lenWord = word.length;
+  let result = "";
   for (let i = 0; i < lenWord / 2; i++) {
     if (word[i] !== word[lenWord - 1 - i]) {
       console.log("non è plaindroma");
+      document.getElementById("resultPalindrome").classList.add("text-danger");
+      document.getElementById("resultPalindrome").innerHTML =
+        "la parola non è palindroma";
     } else {
       console.log("è palindroma");
+      document
+        .getElementById("resultPalindrome")
+        .classList.remove("text-danger");
+      document.getElementById("resultPalindrome").classList.add("text-primary");
+      document.getElementById("resultPalindrome").innerHTML =
+        "la parola è palindroma";
     }
   }
+  document.getElementById("userComputer").classList.remove("d-none");
 }
-const result = validatePalindrome(word);
-console.log(result);
-*/
 
 //PARI E DISPARI
 let scelta = "";
 //far scegliere all'utente pari o dispari
 
 function evenOdd(value) {
- 
   scelta = value;
-  document.getElementById("buttonEvenOdd").classList.add("d-none");
-//facciamo vedere chi ha vinto
-let computer = formNumber()
-if (value == computer){
-  //document.getElementById("resultaGme") = "hai vinto il numero uscito era pari !!"
-  console.log("hai vinto")
-  
-  } else  {
-    document.getElementById("resultGame") ="hai perso "
-  
+  //document.getElementById("buttonEvenOdd").classList.add("d-none");
+  //facciamo vedere chi ha vinto
+  let computer = formNumber();
+  if (scelta == computer) {
+    document.getElementById("resultGame").classList.add("text-primary");
+
+    document.getElementById("resultGame").innerHTML = "hai vinto";
+    console.log("hai vinto");
+  } else if (scelta != computer) {
+    document.getElementById("resultGame").classList.add("text-danger");
+    document.getElementById("resultGame").innerHTML = "hai perso";
+
+    console.log("hai perso");
   }
-  
 }
 
 // far scegliere all'utente un numero da 1 a 5
 function formNumber() {
- let numberUser = parseInt(document.getElementById("numberForm").value);
+  let numberUser = parseInt(document.getElementById("numberForm").value);
+  document.getElementById("buttonEvenOdd").classList.remove("d-none");
+  document.getElementById("palindromeGame").classList.add("d-none");
+
   let result = "";
   if (numberUser > 5) {
     result = "il numero è più di 5";
@@ -86,9 +94,8 @@ function formNumber() {
   console.log(total, "totale");
   // stabiliamo se il risultato è pari o disapri
   if (total % 2 == 0) {
-  return 'even'  
+    return "even";
   } else {
-return'odd'  }
-   
+    return "odd";
+  }
 }
-
