@@ -15,7 +15,8 @@ Pari e Dispari
 
 // chiedere all'utente una parola
 
-let word = prompt("Inserire una parola");
+
+/*let word = prompt("Inserire una parola");
 
 // se non inserisce un parola scrivere inserire una parola
 if (word === null || word === "") {
@@ -41,28 +42,32 @@ function validatePalindrome() {
 }
 const result = validatePalindrome(word);
 console.log(result);
-
+*/
 
 //PARI E DISPARI
-
+let scelta = "";
 //far scegliere all'utente pari o dispari
-const even = "pari";
-const odd = "dispari";
-function evenOdd(even, odd) {
-  if (even) {
-    console.log(even);
-  } else if (odd) {
-    console.log(odd);
-  }
-  document.getElementById("buttonEvenOdd").classList.add("d-none");
 
-  return evenOdd;
+function evenOdd(value) {
+ 
+  scelta = value;
+  document.getElementById("buttonEvenOdd").classList.add("d-none");
+//facciamo vedere chi ha vinto
+let computer = formNumber()
+if (value == computer){
+  //document.getElementById("resultaGme") = "hai vinto il numero uscito era pari !!"
+  console.log("hai vinto")
+  
+  } else  {
+    document.getElementById("resultGame") ="hai perso "
+  
+  }
+  
 }
 
 // far scegliere all'utente un numero da 1 a 5
-let numberUser = "";
-function formNumber(numberUser) {
-  numberUser = parseInt(document.getElementById("numberForm").value);
+function formNumber() {
+ let numberUser = parseInt(document.getElementById("numberForm").value);
   let result = "";
   if (numberUser > 5) {
     result = "il numero è più di 5";
@@ -81,23 +86,9 @@ function formNumber(numberUser) {
   console.log(total, "totale");
   // stabiliamo se il risultato è pari o disapri
   if (total % 2 == 0) {
-    const evenTotal = "Il numero totale è pari ";
+  return 'even'  
   } else {
-    const oddTotal = "Il numero totale è dispari ";
-  }
-  return evenTotal, oddTotal
+return'odd'  }
+   
 }
 
-//facciamo vedere chi ha vinto
-if (even && evenTotal){
-//document.getElementById("resultaGme") = "hai vinto il numero uscito era pari !!"
-console.log("hai vinto")
-}else if (odd && oddTotal) {
-  document.getElementById("resultGame") = "hai vinto il numero uscito era dispari!!"
-
-}else if (odd && evenTotal){
-  document.getElementById("resultGame") ="hai perso il numero uscito era dispari !!"
-} else if (even && oddTotal){
-  document.getElementById("resultGame") ="hai perso il numero uscito era pari !!"
-
-}

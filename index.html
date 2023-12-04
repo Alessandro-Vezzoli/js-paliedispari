@@ -18,35 +18,33 @@
     <div class="container">
       <h1 class="text-center mt-5">USER VS COMPUTER</h1>
       <div class="card mt-5">
-        <form class="m-5">
-          <div id="buttonEvenOdd">
-            <h3 class="text-center">SCELI PARI O DISPARI</h3>
-            <div class="col-12 d-flex justify-content-center mt-3">
-              <button onclick="evenOdd(even)" class="btn btn-primary me-2">
-                PARI
-              </button>
-              <button onclick="evenOdd(odd)" class="btn btn-primary">
-                DISPARI
+        <div id="buttonEvenOdd">
+          <h3 class="text-center">SCELI PARI O DISPARI</h3>
+          <div class="col-12 d-flex justify-content-center mt-3">
+            <button onclick="evenOdd('even')" class="btn btn-primary me-2">
+              PARI
+            </button>
+            <button onclick="evenOdd('odd')" class="btn btn-primary">
+              DISPARI
+            </button>
+          </div>
+        </div>
+        <div class="row mt-5">
+          <div class="col-12 d-flex justify-content-center">
+            <div class="text-center mt-3" id="number">
+              <label for="formNumber" class="form-label"
+                >Scegli un numero da 1 a 5</label
+              >
+              <input type="number" class="form-control" id="numberForm" />
+            </div>
+            <div class="mt-5 ms-3">
+              <button onclick="formNumber()" class="btn btn-primary">
+                INVIA
               </button>
             </div>
+            <h3 class="text-center" id="error"></h3>
           </div>
-          <div class="row mt-5">
-            <div class="col-12 d-flex justify-content-center">
-              <div class="text-center mt-3" id="number">
-                <label for="formNumber" class="form-label"
-                  >Scegli un numero da 1 a 5</label
-                >
-                <input type="number" class="form-control" id="numberForm" />
-              </div>
-              <div class="mt-5 ms-3">
-                <button onclick="formNumber()" class="btn btn-primary">
-                  INVIA
-                </button>
-              </div>
-              <h3 class="text-center" id="error"></h3>
-            </div>
-          </div>
-        </form>
+        </div>
       </div>
     </div>
     <script src="./assets/main.js" async defer></script>
