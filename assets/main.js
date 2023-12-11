@@ -36,7 +36,6 @@ function validatePalindrome() {
       document.getElementById("resultPalindrome").innerHTML =
         "la parola non è palindroma";
     } else {
-      console.log("è palindroma");
       document
         .getElementById("resultPalindrome")
         .classList.remove("text-danger");
